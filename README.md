@@ -1,2 +1,14 @@
-# Knightproblem
- my first repository
+# Introducere
+Salutare! Acesta este primul meu proiect realizat in github.Aici voi implementa un cod in limbajul C++ legat de circuitul calului pe o tabla de sah,in care trebuie sa tinem evidenta mutarilor astfel incat calul sa acopere fiecare pozitie de pe tabla,fara a revizita o mutare facuta deja.
+# Aplicatii necesare
+Github desktop,Docker desktop,Visual Studio Code.
+# Limbajul ales pentru a rezolva proiectul
+Am decis sa aleg limbajul C++ deoarece este un limbaj destul de cunoscut de marea majoritate a persoanelor,este predat inca de la scoala iar astfel acest proiect poate fi un model bun atat pentru studenti dar si pentru persoane care vor sa exerseze in C++.
+# Explicatie pentru problema circuitului calului
+In primul rand trebuie sa intelegem cum se muta calul pe tabla de sah.Acesta merge in L,folosind 3 patratele.De aici,putem folosi 2 vectori care reprezinta miscarile noastre pe tabla de sah.Problema am rezolvat o cu ajutorul backtrackingului.Aceasta metoda,in cazul nostru ne ajuta sa revenim la o miscare,daca o miscare pe care am facut o nu mai are alte posibilitati,altfel am reveni din nou la o mutare anterioara ceea ce nu e bine deoarece vrem sa acoperim tabla de sah fara sa revizitam niste mutari efectuate deja.Vom explora fiecare mutare in parte,pana cand gasim o mutare care sa se poata face.In programul meu,folosesc o tabla care este o matrice 8x8,iar pentru a tine evidenta locurilor libere,initializez fiecare patratel cu -1 care ne arata ca patratelul nu a fost vizitat deja.Locul de unde porneste calul va fi initializat cu 0.Trebuie sa avem in total 64 de miscari.Daca atingem 64 inseamna ca toate patratelele au fost vizitate.
+# Explicatie cod in ordinea rezolvarii
+Am reprezentat mutarile calului in cei doi vectori mutare_x,mutare_y.Apoi am initializat matricea cu -1 pentru a ne da seama care locuri sunt inca libere.Am plasat calul pe prima pozitie adica [0][0] deci o mutare a fost deja facuta.Am facut o functie pentru a afisa matricea si o functie care ne ajuta sa vedem daca o mutare se poate face.Mutarea trebuie sa se faca in cadrul matricei deci nu putem depasi spatiul alocat.Mutarea e in regula daca nu am mai avut alta mutare acolo asadar trebuie sa fie egala cu -1,iar pozitia lui x si y trebuie sa fie intre 0 si 8 pentru a respecta dimensiunea matricei.
+Apoi incepem partea mai importanta adica functia de rezolvare a problemei.Prima oara verificam cu ajutorul contorului daca toate miscarile au fost facute,adica trebuie sa fie 64.Daca este 64 inseamna ca putem afisa matricea cu mutarile facute si ca problema a fost rezolvata.
+Altfel,facem un for pentru mutarile noastre.Daca miscarea este valida,contorul pentru mutari este plasat pe prima pozitie valida pe care o avem.Astfel practic ne am creat un fel de checkpoint pentru o mutare care stim sigur ca e buna.Apoi de aici,testam urmatoarea miscare,iar daca nu e in regula o setam la -1,astfel folosim backtrackingul,asa putem reveni la acel "checkpoint".
+# Cum m am folosit de aplicatii
+In primul rand am creat un cont de github si am instalat github desktop.Am facut un nou repository cu problema si un readme
